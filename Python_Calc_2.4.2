@@ -1,4 +1,4 @@
-#Shell-Based python calculator, Version 2.4.2, More updates soon.
+#Shell-Based python calculator, Version 2.4.3, More updates soon.
 
 import math
 import time
@@ -25,7 +25,7 @@ def getvalues():
 def getexponentvalues():
     global val1, val2
     val1 = input("Supply value of exponent: ")
-    val2 = input("Supply value to multiply ")
+    val2 = input("Supply value of base: ")
     try:
         val1 = float(val1)
         val2 = float(val2)
@@ -76,9 +76,13 @@ def mult():
 
 def div():
     if getvalues():
-        val3 = val1 / val2
-        print("Result:", val3)
-        time.sleep(1)
+        try:
+            val3 = val1 / val2
+            print("Result:", val3)
+            time.sleep(1)
+        except:
+            print("Cannot divide by 0")
+            time.sleep(1)
 
 def exp():
     if getexponentvalues():
@@ -123,7 +127,7 @@ def percadd():
         time.sleep(1)
 
 def log():
-    print("Available versions: V2.0.0, V2.1.0, V2.2.0, V2.3.0, V2.4.0, V2.4.1, V2.4.2 (Current)")
+    print("Available versions: V2.0.0, V2.1.0, V2.2.0, V2.3.0, V2.4.0, V2.4.1, V2.4.2, V2.4.3 (Current)")
     version = input("Supply update to view changelog: ")
     if version == "V2.0.0":
         print("Version: V2.0.0")
@@ -211,6 +215,17 @@ def log():
         print("Removed: Nothing")
         time.sleep(0.5)
         print("In progress: Advanced arithmetic operations")
+        time.sleep(1)
+    elif version == "V2.4.3":
+        print("Version: 2.4.3")
+        time.sleep(0.5)
+        print("Added: List Commands for fractions")
+        time.sleep(0.5)
+        print("Changed: Fixed several bugs")
+        time.sleep(0.5)
+        print("Removed: Nothing")
+        time.sleep(0.5)
+        print("In progress: Advanced arithmetic operations (still)")
         time.sleep(1)
     elif version == "All":
         print("Version: V2.0.0")
@@ -305,6 +320,16 @@ def log():
         time.sleep(0.5)
         print("In progress: Advanced arithmetic operations")
         time.sleep(1)
+        print("Version: 2.4.3")
+        time.sleep(0.5)
+        print("Added: List Commands for fractions")
+        time.sleep(0.5)
+        print("Changed: Fixed several bugs")
+        time.sleep(0.5)
+        print("Removed: Nothing")
+        time.sleep(0.5)
+        print("In progress: Advanced arithmetic operations (still)")
+        time.sleep(1)
     else:
         print("Unknown version")
         time.sleep(1)
@@ -317,17 +342,21 @@ def frac():
     print("Entering fraction mode..")
     time.sleep(0.5)
     print("Fraction mode active!")
+    time.sleep(1)
+    print("Type 'List Commands' for a list of commands")
     while True:
-        command = input("Supply basic fractional arithmetic: ")
-        if command == "Addition":
+        fcommand = input("Supply basic fractional arithmetic: ")
+        if fcommand == "Addition":
             fracadd()
-        elif command == "Subtraction":
+        elif fcommand == "List Commands":
+            fraccom()
+        elif fcommand == "Subtraction":
             fracsub()
-        elif command == "Multiplication":
+        elif fcommand == "Multiplication":
             fracmult()
-        elif command == "Division":
+        elif fcommand == "Division":
             fracdiv()
-        elif command == "Exit":
+        elif fcommand == "Exit":
             print("Exiting fraction mode..")
             time.sleep(0.5)
             print("Normal caulcator mode active!")
@@ -365,7 +394,10 @@ def fracdiv():
         print("Result:", num3, "/", den3)
         time.sleep(1)
 
-print("Welcome to 'The Calculator' V2.4.2")
+def fraccom():
+    print("Available fractional commands: Addition, Subtraction, Mutliplication, Division")
+
+print("Welcome to 'The Calculator' V2.4.3")
 print("Type List Commands to list all commands")
 print("Or type Changelog to find a change log detailing all updates")
 while True:
@@ -396,4 +428,4 @@ while True:
         print("Ending program..")
         break
     else:
-        print("Invalid command!")   
+        print("Invalid command!")    
