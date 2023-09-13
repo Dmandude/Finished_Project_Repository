@@ -1,0 +1,399 @@
+#Shell-Based python calculator, Version 2.4.2, More updates soon.
+
+import math
+import time
+
+val1 = 0.0
+val2 = 0.0
+num1 = 0.0
+num2 = 0.0
+den1 = 0.0
+den2 = 0.0
+
+def getvalues():
+    global val1, val2
+    val1 = input("Supply first value: ")
+    val2 = input("Supply second value: ")
+    try:
+        val1 = float(val1)
+        val2 = float(val2)
+        return True
+    except:
+        print("Invalid value/s")
+        return False
+
+def getexponentvalues():
+    global val1, val2
+    val1 = input("Supply value of exponent: ")
+    val2 = input("Supply value to multiply ")
+    try:
+        val1 = float(val1)
+        val2 = float(val2)
+        return True
+    except:
+        print("Invalid value/s")
+        return False
+
+def getrootvalue():
+    global val1
+    val1 = input("Supply value to find square root of: ")
+    try:
+        val1 = float(val1)
+        return True
+    except:
+        print("Invalid value")
+        return False
+
+def getfractionvalues():
+    global num1, den1, num2, den2
+    fval1 = input("Supply first fraction: ")
+    fval2 = input("Supply second fraction: ")
+    try:
+        num1, den1 = map(float, fval1.split('/'))
+        num2, den2 = map(float, fval2.split('/'))
+        return True
+    except:
+        print("Invalid fraction/s")
+        return False
+
+def add():
+    if getvalues():
+        val3 = val1 + val2
+        print("Result:", val3)
+        time.sleep(1)
+
+def sub():
+    if getvalues():
+        val3 = val1 - val2
+        print("Result:", val3)
+        time.sleep(1)
+
+def mult():
+    if getvalues():
+        val3 = val1 * val2
+        print("Result:", val3)
+        time.sleep(1)
+
+def div():
+    if getvalues():
+        val3 = val1 / val2
+        print("Result:", val3)
+        time.sleep(1)
+
+def exp():
+    if getexponentvalues():
+        val3 = val2 ** val1
+        print("Result:", val3)
+        time.sleep(1)
+
+def root():
+    if getrootvalue():
+        try:
+            val2 = math.sqrt(val1)
+            print("Result:", val2)
+            time.sleep(1)
+        except:
+            print("Value can not be negative")
+            time.sleep(1)
+
+def percsub():
+    val1 = input("Value to subtract from: ")
+    val2 = input("Percentage to subtract: ")
+    try:
+        val1 = float(val1)
+        val2 = float(val2)
+        val3 = val1 - (val1 * val2) / 100
+        print("Result:", val3)
+        time.sleep(1)
+    except:
+        print("Invalid value/s")
+        time.sleep(1)
+
+def percadd():
+    val1 = input("Value to add on to: ")
+    val2 = input("Percentage to add: ")
+    try:
+        val1 = float(val1)
+        val2 = float(val2)
+        val3 = val1 + (val1 * val2) / 100
+        print("Result:", val3)
+        time.sleep(1)
+    except:
+        print("Invalid value/s")
+        time.sleep(1)
+
+def log():
+    print("Available versions: V2.0.0, V2.1.0, V2.2.0, V2.3.0, V2.4.0, V2.4.1, V2.4.2 (Current)")
+    version = input("Supply update to view changelog: ")
+    if version == "V2.0.0":
+        print("Version: V2.0.0")
+        time.sleep(0.5)
+        print("Added: Program Revamp")
+        time.sleep(0.5)
+        print("Changed: Program Optimised")
+        time.sleep(0.5)
+        print("Removed: Fractions (Temporary)")
+        time.sleep(0.5)
+        print("In progress: Percentages, Fractions")
+        time.sleep(1)
+    elif version == "V2.1.0":
+        print("Version: V2.1.0")
+        time.sleep(0.5)
+        print("Added: Percentage Addition")
+        print("Added: Percentage Subtraction")
+        print("Added: Delay between results for readability purposes")
+        time.sleep(0.5)
+        print("Changed: Program optimisations")
+        print("Changed: Changelog remade")
+        time.sleep(0.5)
+        print("Removed: Nothing")
+        time.sleep(0.5)
+        print("In progress: Percentage commands")
+        time.sleep(1)
+    elif version == "V2.2.0":
+        print("Version: 2.2.0")
+        time.sleep(0.5)
+        print("Added: Fraction calculator")
+        print("Added: Else statements to handle incorrect responses")
+        print("Added: Version 2.2.0 to changelog")
+        time.sleep(0.5)
+        print("Changed: Program optimisations")
+        print("Changed: Reworded some statements")
+        time.sleep(0.5)
+        print("Removed: Nothing")
+        time.sleep(0.5)
+        print("In progress: Major optimisation overhaul")
+        time.sleep(1)
+    elif version == "V2.3.0":
+        print("Version: 2.3.0")
+        time.sleep(0.5)
+        print("Added: Negative square root value error handler")
+        print("Added: Version 2.3.0 to changelog")
+        time.sleep(0.5)
+        print("Changed: Major optimisation overhaul")
+        print("Changed: Bugs fixed")
+        time.sleep(0.5)
+        print("Removed: Bulky parts of code as part of optimisation overhaul")
+        time.sleep(0.5)
+        print("In progress: Advanced arithmetic operations")
+        time.sleep(1)
+    elif version == "V2.4.0":
+        print("Version: V2.4.0")
+        time.sleep(0.5)
+        print("Added: Invalid value safety measures")
+        print("Added: Version 2.4.0 to changelog")
+        time.sleep(0.5)
+        print("Changed: Optimisation methods")
+        time.sleep(0.5)
+        print("Removed: Nothing")
+        time.sleep(0.5)
+        print("In progress: Advanced arithmetic operations")
+        time.sleep(1)
+    elif version == "V2.4.1":
+        print("Version: V2.4.1")
+        time.sleep(0.5)
+        print("Added: 'All' Command to changelog")
+        print("Added: Fractions, Percentage Addition, and Percentage Subtraction commands to 'List Commands' command")
+        time.sleep(0.5)
+        print("Changed: Minor code snippets for optimisation")
+        time.sleep(0.5)
+        print("Removed: Nothing")
+        time.sleep(0.5)
+        print("In progress: Advanced arithmetic operations")
+        time.sleep(1)
+    elif version == "V2.4.2":
+        print("Version: V2.4.2")
+        time.sleep(0.5)
+        print("Added: Nothing")
+        time.sleep(0.5)
+        print("Changed: Value conversion method changed from 'int()' to 'float()'")
+        time.sleep(0.5)
+        print("Removed: Nothing")
+        time.sleep(0.5)
+        print("In progress: Advanced arithmetic operations")
+        time.sleep(1)
+    elif version == "All":
+        print("Version: V2.0.0")
+        time.sleep(0.5)
+        print("Added: Program Revamp")
+        time.sleep(0.5)
+        print("Changed: Program Optimised")
+        time.sleep(0.5)
+        print("Removed: Fractions (Temporary)")
+        time.sleep(0.5)
+        print("In progress: Percentages, Fractions")
+        time.sleep(1)
+        print(" ")
+        time.sleep(0.5)
+        print("Version: V2.1.0")
+        time.sleep(0.5)
+        print("Added: Percentage Addition")
+        print("Added: Percentage Subtraction")
+        print("Added: Delay between results for readability purposes")
+        time.sleep(0.5)
+        print("Changed: Program optimisations")
+        print("Changed: Changelog remade")
+        time.sleep(0.5)
+        print("Removed: Nothing")
+        time.sleep(0.5)
+        print("In progress: Percentage commands")
+        time.sleep(1)
+        print(" ")
+        time.sleep(0.5)
+        print("Version: 2.2.0")
+        time.sleep(0.5)
+        print("Added: Fraction calculator")
+        print("Added: Else statements to handle incorrect responses")
+        print("Added: Version 2.2.0 to changelog")
+        time.sleep(0.5)
+        print("Changed: Program optimisations")
+        print("Changed: Reworded some statements")
+        time.sleep(0.5)
+        print("Removed: Nothing")
+        time.sleep(0.5)
+        print("In progress: Major optimisation overhaul")
+        time.sleep(1)
+        print(" ")
+        time.sleep(0.5)
+        print("Version: 2.3.0")
+        time.sleep(0.5)
+        print("Added: Negative square root value error handler")
+        print("Added: Version 2.3.0 to changelog")
+        time.sleep(0.5)
+        print("Changed: Major optimisation overhaul")
+        print("Changed: Bugs fixed")
+        time.sleep(0.5)
+        print("Removed: Bulky parts of code as part of optimisation overhaul")
+        time.sleep(0.5)
+        print("In progress: Advanced arithmetic operations")
+        time.sleep(1)
+        print(" ")
+        time.sleep(0.5)
+        print("Version: V2.4.0")
+        time.sleep(0.5)
+        print("Added: Invalid value safety measures")
+        print("Added: Version 2.4.0 to changelog")
+        time.sleep(0.5)
+        print("Changed: Optimisation methods")
+        time.sleep(0.5)
+        print("Removed: Nothing")
+        time.sleep(0.5)
+        print("In progress: Advanced arithmetic operations")
+        time.sleep(1)
+        print(" ")
+        time.sleep(0.5)
+        print("Version: V2.4.1")
+        time.sleep(0.5)
+        print("Added: 'All' Command to changelog")
+        print("Added: Fractions, Percentage Addition, and Percentage Subtraction commands to 'List Commands' command")
+        time.sleep(0.5)
+        print("Changed: Minor code snippets for optimisation")
+        time.sleep(0.5)
+        print("Removed: Nothing")
+        time.sleep(0.5)
+        print("In progress: Advanced arithmetic operations")
+        time.sleep(1)
+        print(" ")
+        time.sleep(0.5)
+        print("Version: V2.4.2")
+        time.sleep(0.5)
+        print("Added: Nothing")
+        time.sleep(0.5)
+        print("Changed: Value conversion method changed from 'int()' to 'float()'")
+        time.sleep(0.5)
+        print("Removed: Nothing")
+        time.sleep(0.5)
+        print("In progress: Advanced arithmetic operations")
+        time.sleep(1)
+    else:
+        print("Unknown version")
+        time.sleep(1)
+
+def clist():
+    print("Available commands: Addition, Subtraction, Multiplication, Division, Exponent, Square Root, Fractions, Percentage Addition, Percentage Subtraction")
+    time.sleep(1)
+
+def frac():
+    print("Entering fraction mode..")
+    time.sleep(0.5)
+    print("Fraction mode active!")
+    while True:
+        command = input("Supply basic fractional arithmetic: ")
+        if command == "Addition":
+            fracadd()
+        elif command == "Subtraction":
+            fracsub()
+        elif command == "Multiplication":
+            fracmult()
+        elif command == "Division":
+            fracdiv()
+        elif command == "Exit":
+            print("Exiting fraction mode..")
+            time.sleep(0.5)
+            print("Normal caulcator mode active!")
+            time.sleep(1)
+            break
+        else:
+            print("Invalid command")
+            time.sleep(1)
+    
+def fracadd():
+    if getfractionvalues():
+        num3 = num1 * den2 + num2 * den1
+        den3 = den1 * den2
+        print("Result:", num3, "/", den3)
+        time.sleep(1)
+
+def fracsub():
+    if getfractionvalues():
+        num3 = num1 * den2 - num2 * den1
+        den3 = den1 * den2
+        print("Result:", num3, "/", den3)
+        time.sleep(1)
+
+def fracmult():
+    if getfractionvalues():
+        num3 = num1 * num2
+        den3 = den1 * den2
+        print("Result:", num3, "/", den3)
+        time.sleep(1)
+
+def fracdiv():
+    if getfractionvalues():
+        num3 = num1 * den2
+        den3 = den1 * num2
+        print("Result:", num3, "/", den3)
+        time.sleep(1)
+
+print("Welcome to 'The Calculator' V2.4.2")
+print("Type List Commands to list all commands")
+print("Or type Changelog to find a change log detailing all updates")
+while True:
+    command = input("Please supply an integer to perform: ")
+    if command == "List Commands":
+        clist()
+    elif command == "Changelog":
+        log()
+    elif command == "Addition":
+        add()
+    elif command == "Subtraction":
+        sub()
+    elif command == "Multiplication":
+        mult()
+    elif command == "Division":
+        div()
+    elif command == "Exponent":
+        exp()
+    elif command == "Square Root":
+        root()
+    elif command == "Percentage Addition":
+        percadd()
+    elif command == "Percentage Subtraction":
+        percsub()
+    elif command == "Fractions":
+        frac()
+    elif command == "End":
+        print("Ending program..")
+        break
+    else:
+        print("Invalid command!")   
